@@ -1,0 +1,66 @@
+
+
+
+CFREF(1L)         MISC. REFERENCE MANUAL PAGES          CFREF(1L)
+
+
+
+NAME
+     cfref - generate C function cross reference
+
+SYNOPSIS
+     cfref [ -_v-_h-? ][ -L ][ -l _l_i_s_t_f_i_l_e ][ -f ][ -ip  ][  -il  ]
+     _f_i_l_e_n_a_m_e_s..
+
+DESCRIPTION
+     The main purpose of this program is make  it  easy  to  read
+     someone's or maintain own code.
+
+     It can generate reports consist  of  only  watching  symbols
+     with  -l or -L. -l needs a _l_i_s_t_f_i_l_e , listed all the symbols
+     _n_o_t  watching,  a  symbol  per  a  line  format.   -L   uses
+     /usr/local/lib/funclist,   the   same  format,  need  to  be
+     prepared in advance, insted of it. Probably   -L  is  useful
+     for  disable  to  report  previously  provided functions(ex.
+     standards, systems, &c).
+
+     _c_f_r_e_f reports into stdout unless -f is specified. Then, into
+     the  file  that has the same basename as source and .cf suf-
+     fix.  In case that a executable will be compiled  from  more
+     than  one  sourcefile, analyzing all sources at a time makes
+     better result.
+
+FILE
+     /usr/local/lib/funclist  Table of standard and system  func-
+     tions.
+
+SEE ALSO
+     cxref(1V), cflow(1V), make(1), cc(1), cpp(1)
+
+BUGS
+     Looking  synbols  up  using  incomplete  set  of  characters
+     allowed to compose a symbol.
+
+     Preprocessor delective is to be ignored.
+
+     _c_f_r_e_f is written in ANSI C and able to  analyze  sourcecodes
+     only written in ANSI C.
+
+AUTHOR
+        Ryuji Suzuki
+      jf7wex@yumyum.sdj.miyagi.prug.or.jp
+      jf7wex@gatortia.tohoku-inet.or.jp
+
+
+
+
+
+
+
+
+
+
+Sun Release 4.1           Last change:                          1
+
+
+

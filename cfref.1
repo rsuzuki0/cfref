@@ -1,0 +1,57 @@
+.TH CFREF 1L
+.SH NAME
+cfref \- generate C function cross reference
+.SH SYNOPSIS
+.B cfref
+[
+.I \-v\-h\-?
+][
+.B -L
+][
+.B \-l
+.I listfile
+][
+.B \-f
+][
+.B \-ip
+][
+.B \-il
+]
+.I "filenames.."
+.SH DESCRIPTION
+The main purpose of this program is make it easy to read someone's
+or maintain own code. 
+.PP
+It can generate reports consist of only watching symbols
+with -l or -L. -l needs a
+.I listfile
+, listed all the symbols
+.I not
+watching, a symbol per a line format.
+-L uses /usr/local/lib/funclist, the same format, need to be prepared
+in advance,
+insted of it. Probably  -L is useful for disable to report previously
+provided functions(ex. standards, systems, &c).
+.PP
+.I cfref
+reports into stdout unless -f is specified. Then, into
+the file that has the same basename as source and .cf suffix.
+In case that an executable will be compiled from more than one sourcefile,
+analyzing all sources at a time makes better result.
+.SH FILE
+/usr/local/lib/funclist	Table of standard and system functions.
+.SH SEE ALSO
+cxref(1V), cflow(1V), make(1), cc(1), cpp(1)
+.SH BUGS
+Looking synbols up using incomplete set of characters allowed to compose
+a symbol.
+.PP
+Preprocessor delectives	are to be ignored.
+.PP
+.I cfref
+is written in ANSI C and able to analyze sourcecodes only written in
+ANSI C.
+.SH AUTHOR
+   Ryuji Suzuki
+ jf7wex@yumyum.sdj.miyagi.prug.or.jp
+ jf7wex@gatortia.tohoku-inet.or.jp

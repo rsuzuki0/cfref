@@ -1,0 +1,71 @@
+islibfunc()
+{
+}
+
+isreserved()
+{
+}
+
+gec()
+{
+}
+
+analyze_calling();
+
+iscalling()
+{
+	gec(+cfref.c);
+	analyze_calling(+cfref.c, -cfref.c);
+}
+
+analyze_calling()
+{
+	gec(+cfref.c);
+	isreserved(+cfref.c);
+	islibfunc(+cfref.c);
+	iscalling(+cfref.c);
+}
+
+analyze()
+{
+	gec(+cfref.c);
+	isreserved(+cfref.c);
+	analyze_calling(+cfref.c, -cfref.c);
+}
+
+addliblist()
+{
+}
+
+run()
+{
+	analyze(+cfref.c);
+}
+
+remake()
+{
+}
+
+search()
+{
+}
+
+change_outdevice()
+{
+}
+
+report()
+{
+	remake(+cfref.c);
+	change_outdevice(+cfref.c);
+	search(+cfref.c);
+	change_outdevice(+cfref.c);
+}
+
+main()
+{
+	addliblist(+cfref.c);
+	run(+cfref.c);
+	report(+cfref.c);
+}
+
